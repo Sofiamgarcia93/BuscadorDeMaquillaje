@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
 $font: "Lato", sans-serif;
-$white: #f5f5f5;
+$white: white;
 $light: #e0c9cb;
 $tan: #c3a1a0;
 $pink: #d9aab7;
@@ -12,7 +12,11 @@ body {
   background: $light;
   font-family: $font, sans-serif;
   text-transform: uppercase;
+  background-image: url(https://p16-amd-va.tiktokcdn.com/obj/musically-maliva-obj/8733f94e398f9c79399a971cce238d36);
+  background-repeat: no-repeat;
+  background-size: contain;
 }
+
 header {
   display: flex;
   flex-direction: row;
@@ -22,15 +26,20 @@ header {
 }
 .titulo-header-container {
   display: flex;
+  width: 30%;
+  align-content: center;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
 }
+
 .titulo-header {
   color: $white;
 }
 .fa-crown {
   color: $white;
-  font-size: 16px;
+  font-size: 25px;
 }
 #buscador-header {
   background: darken($light, 10%);
@@ -40,23 +49,27 @@ header {
   border: 0;
   margin: 10px;
   border-radius: 2px;
+  width: 70%;
 }
 /*************************************************/
 
 .container {
-  background-color: $white;
-  border: 1px solid $tan;
-  margin: 20px;
+  margin: 100px;
   padding: 20px;
   box-shadow: 5px 5px 15px rgba($rose, 0.5);
   border-radius: 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .tarjeta {
-  width: 300px;
-  height: 350px;
+  width: 320px;
+  border: 1px solid $rose;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 15px;
+  background-color: rgba(255, 255, 255, 0.315);
 }
 .product-title {
   font-size: 1.2em;
@@ -70,6 +83,7 @@ header {
 
 img {
   width: 290px;
+  border-radius: 25%;
 }
 
 .product {

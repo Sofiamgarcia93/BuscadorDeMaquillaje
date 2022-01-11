@@ -16,7 +16,7 @@ fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
 */
   
 
-  const endpointMakeUp = "http://makeup-api.herokuapp.com/api/v1/products.json";
+  const endpointMakeUp = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
   const tarjeta = document.querySelector(".container");
 
   
