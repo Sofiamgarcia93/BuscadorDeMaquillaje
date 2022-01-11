@@ -1,12 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
-html {
-  display: grid;
-  min-height: 100%;
-  font-family: "Lato", sans-serif;
-}
-
 body {
-  display: grid;
   background: #e0c9cb;
   font-family: "Lato", sans-serif, sans-serif;
   text-transform: uppercase;
@@ -14,19 +7,52 @@ body {
 
 header {
   display: flex;
+  flex-direction: row;
+  box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
   justify-content: space-between;
-  /*box-shadow: 5px 5px 15px rgba($rose, 0.5);*/
+  padding: 10px;
 }
 
+.titulo-header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.titulo-header {
+  color: #f5f5f5;
+}
+
+.fa-crown {
+  color: #f5f5f5;
+  font-size: 16px;
+}
+
+#buscador-header {
+  background: #cda9ac;
+  padding: 10px;
+  display: inline-block;
+  outline: 0;
+  border: 0;
+  margin: 10px;
+  border-radius: 2px;
+}
+
+/*************************************************/
 .container {
-  position: relative;
-  margin: auto;
-  overflow: hidden;
-  width: 520px;
-  height: 350px;
-  background: #f5f5f5;
+  background-color: #f5f5f5;
+  border: 1px solid #c3a1a0;
+  margin: 20px;
+  padding: 20px;
   box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
   border-radius: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.tarjeta {
+  width: 300px;
+  height: 350px;
 }
 
 .product-title {
@@ -37,20 +63,15 @@ header {
 
 .price {
   color: #c3a1a0;
-  margin-top: -5px;
 }
 
 img {
   width: 290px;
-  margin-top: 47px;
 }
 
 .product {
-  position: absolute;
   width: 40%;
   height: 100%;
-  top: 10%;
-  left: 60%;
 }
 
 .description {
@@ -64,8 +85,9 @@ img {
   text-align: justify;
 }
 
+/*
 button {
-  background: #cda9ac;
+  background: darken($light, 10%);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -74,12 +96,12 @@ button {
   border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #f5f5f5;
+  color: $white;
   cursor: pointer;
-}
-button:hover {
-  background: #ba7e7e;
-  transition: all 0.4s ease-in-out;
+  &:hover {
+    background: $rose;
+    transition: all 0.4s ease-in-out;
+  }
 }
 
 .add {
@@ -91,8 +113,9 @@ button:hover {
 }
 
 .focus {
-  background: #ba7e7e;
-  color: #f5f5f5;
+  background: $rose;
+  color: $white;
 }
+*/
 
 /*# sourceMappingURL=style.css.map */
