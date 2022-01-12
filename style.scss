@@ -18,7 +18,7 @@ body {
   text-transform: uppercase;
   background-image: url(https://p16-amd-va.tiktokcdn.com/obj/musically-maliva-obj/8733f94e398f9c79399a971cce238d36);
   background-repeat: no-repeat;
-  background-size: contain;
+  /*background-size: contain*/
 }
 
 header {
@@ -166,3 +166,31 @@ button {
   color: $white;
 }
 */
+
+/***********PAGINADO********/
+
+.paginado {
+  @include display-flex();
+  justify-content: center;
+}
+
+%botones-prev-next {
+  border: none;
+  color: $pink;
+  margin: 20px;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}
+
+.boton-pag-prev-next {
+  @extend %botones-prev-next;
+}
+.boton-pag-prev-next:hover {
+  background-color: $rose;
+  color: white;
+}
