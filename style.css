@@ -10,7 +10,6 @@ body {
 
 header {
   display: flex;
-  flex-direction: row;
   box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
   justify-content: space-between;
   padding: 10px;
@@ -30,13 +29,14 @@ header {
   color: white;
 }
 
-.fa-crown {
+.fa-heart {
   color: white;
   font-size: 25px;
 }
 
+/*
 #buscador-header {
-  background: #cda9ac;
+  background: darken($light, 10%);
   padding: 10px;
   display: inline-block;
   outline: 0;
@@ -44,10 +44,34 @@ header {
   margin: 10px;
   border-radius: 2px;
   width: 70%;
+}*/
+/*************************************************/
+.categorias-header-container {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
 }
 
-/*************************************************/
-.container {
+.categoria-header {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.171);
+  color: white;
+  margin: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}
+
+.categoria-header:hover {
+  background-color: #ba7e7e;
+  color: white;
+}
+
+.container-main {
   margin: 100px;
   padding: 20px;
   box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
