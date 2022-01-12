@@ -13,24 +13,25 @@ fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
     
   }) 
 
+ PARTE DE LA TARJETA QUE INCLUIRIA EL PRECIO Y DESCRIPCION
+  <p class="price">${curr.price}</p>
+       <p class="description">${curr.description}</p>
 */
   
 
-  const endpointMakeUp = "http://makeup-api.herokuapp.com/api/v1/products.json?brand=maybelline";
+  const endpointMakeUpPaginaPrincipal = "https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4";
   const tarjeta = document.querySelector(".container-main");
 
   
 
-  const crearTarjeta = (array) => {
-    const html = array.reduce((acc, curr) => {
+  const crearTarjetaPaginaPrincipal = (array) => {
+    const html = array.slice(0,12).reduce((acc, curr) => {
       return acc + `
       <div class="tarjeta">
       <div class="images">
               <img src="${curr.image_link}" />
             </div>
        <h1 class="product-title">${curr.name}</h2>
-        <p class="price">${curr.price}</p>
-       <p class="description">${curr.description}</p>
        </div>
        `
     }, "")
@@ -38,11 +39,12 @@ fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
   }
   
   const pedirInfo = () =>{
-    fetch(endpointMakeUp)
+    fetch(endpointMakeUpPaginaPrincipal)
     .then((res)=> res.json())
     .then((data) =>{
-        crearTarjeta(data);
+        crearTarjetaPaginaPrincipal(data);
     })
   
 }
 pedirInfo();
+
