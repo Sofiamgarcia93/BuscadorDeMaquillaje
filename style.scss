@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 
+@mixin display-flex {
+  display: flex;
+}
+
 $font: "Lato", sans-serif;
 $white: white;
 $light: #e0c9cb;
@@ -18,14 +22,13 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
+  @include display-flex();
   box-shadow: 5px 5px 15px rgba($rose, 0.5);
   justify-content: space-between;
   padding: 10px;
 }
 .titulo-header-container {
-  display: flex;
+  @include display-flex();
   width: 30%;
   align-content: center;
   justify-content: space-evenly;
@@ -37,10 +40,12 @@ header {
 .titulo-header {
   color: $white;
 }
-.fa-crown {
+.fa-heart {
   color: $white;
   font-size: 25px;
 }
+
+/*
 #buscador-header {
   background: darken($light, 10%);
   padding: 10px;
@@ -50,15 +55,43 @@ header {
   margin: 10px;
   border-radius: 2px;
   width: 70%;
-}
+}*/
 /*************************************************/
 
-.container {
+.categorias-header-container {
+  width: 70%;
+  @include display-flex();
+  justify-content: flex-end;
+}
+
+%botones {
+  border: none;
+  background-color: rgba(255, 255, 255, 0.171);
+  color: $white;
+  margin: 10px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 10px 24px;
+  transition-duration: 0.4s;
+  text-decoration: none;
+}
+
+.categoria-header {
+  @extend %botones;
+}
+
+.categoria-header:hover {
+  background-color: $rose;
+  color: white;
+}
+.container-main {
   margin: 100px;
   padding: 20px;
   box-shadow: 5px 5px 15px rgba($rose, 0.5);
   border-radius: 10px;
-  display: flex;
+  @include display-flex();
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
