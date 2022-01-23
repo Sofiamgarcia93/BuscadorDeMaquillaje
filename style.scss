@@ -81,11 +81,31 @@ header {
 .categoria-header {
   @extend %botones;
 }
-
+.marca-header {
+  @extend %botones;
+}
+.marca-header:hover {
+  background-color: $rose;
+  color: white;
+}
 .categoria-header:hover {
   background-color: $rose;
   color: white;
 }
+
+.ocultar {
+  display: none;
+}
+
+li {
+  display: block;
+  background: $pink;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  border: 1px solid $rose;
+}
+
 .container-main {
   margin: 100px;
   padding: 20px;
