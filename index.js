@@ -25,6 +25,10 @@ const botonPrimeraPagina = document.querySelector("#boton-primera-pagina");
 const botonPaginaAnterior = document.querySelector("#boton-pagina-anterior");
 const botonProximaPagina = document.querySelector("#boton-proxima-pagina");
 const botonUltimaPagina = document.querySelector ("#boton-ultima-pagina");
+const botonCategoriaHeader = document.querySelector(".categoria-header");
+const categoriasDelHeader = document.querySelector(".categorias-header-container");
+const botonMarcaHeader = document.querySelector(".marca-header");
+const marcasDelHeader = document.querySelector(".marcas-header-container");
 let indiceDePagina = 0;
 let indiceMaxPagina = 0;
 let arrayResultados = [];
@@ -76,3 +80,19 @@ botonProximaPagina.onclick = paginaSiguiente;
 botonPaginaAnterior.onclick = paginaAnterior;
 pedirInfo();
 
+
+const sacarPonerClaseOcultarACategorias = () => {
+
+  categoriasDelHeader.classList.toggle("ocultar");
+
+}
+
+const sacarPonerClaseOcultarAMarcas = () => {
+
+  
+  marcasDelHeader.classList.toggle(".ocultar");
+}
+
+
+botonCategoriaHeader.onclick = sacarPonerClaseOcultarACategorias;
+botonMarcaHeader.onclick = sacarPonerClaseOcultarAMarcas;

@@ -52,7 +52,7 @@ header {
   justify-content: flex-end;
 }
 
-.categoria-header {
+.marca-header, .categoria-header {
   border: none;
   background-color: rgba(255, 255, 255, 0.171);
   color: white;
@@ -66,9 +66,27 @@ header {
   text-decoration: none;
 }
 
+.marca-header:hover {
+  background-color: #ba7e7e;
+  color: white;
+}
+
 .categoria-header:hover {
   background-color: #ba7e7e;
   color: white;
+}
+
+.ocultar {
+  display: none;
+}
+
+li {
+  display: block;
+  background: #d9aab7;
+  margin: 0;
+  padding: 20px;
+  list-style: none;
+  border: 1px solid #ba7e7e;
 }
 
 .container-main {
