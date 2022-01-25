@@ -80,11 +80,12 @@ header {
   display: none;
 }
 
-li {
-  display: block;
+.categorias-header-container, .marcas-header-container {
+  width: 20%;
+  height: 100%;
   background: #d9aab7;
   margin: 0;
-  padding: 20px;
+  padding: 10px;
   list-style: none;
   border: 1px solid #ba7e7e;
 }
