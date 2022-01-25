@@ -80,6 +80,8 @@ botonProximaPagina.onclick = paginaSiguiente;
 botonPaginaAnterior.onclick = paginaAnterior;
 pedirInfo();
 
+// OCULTAR Y MOSTRAR CATEGORIAS Y MARCAS DEL HEADER
+
 
 const sacarPonerClaseOcultarACategorias = () => {
 
