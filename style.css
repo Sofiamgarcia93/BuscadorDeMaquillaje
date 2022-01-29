@@ -196,4 +196,36 @@ button {
   color: white;
 }
 
+/*SECCION DE BUSQUEDA*/
+#seccion-busqueda {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px;
+  box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
+  padding: 10px;
+}
+
+::placeholder {
+  color: white;
+  font-family: "Lato", sans-serif;
+}
+
+#busqueda {
+  width: 320px;
+  height: 40px;
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  background-color: rgba(186, 126, 126, 0.5);
+  border-radius: 20px;
+  font-size: 22px;
+  padding: 2px 5px;
+  border: none;
+  margin: 40px;
+}
+
+#busqueda:hover {
+  background-color: #e0c9cb;
+}
+
 /*# sourceMappingURL=style.css.map */
