@@ -98,3 +98,29 @@ const sacarPonerClaseOcultarAMarcas = () => {
 
 botonCategoriaHeader.onclick = sacarPonerClaseOcultarACategorias;
 botonMarcaHeader.onclick = sacarPonerClaseOcultarAMarcas;
+
+
+
+
+//SECCION BUSQUEDA
+
+
+const formularioBusqueda = document.querySelector("#form-busqueda");
+const inputBusqueda = document.querySelector("#busqueda");
+
+const buscarProductos = (busqueda) =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${busqueda}`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+}
+
+
+
+formularioBusqueda.onsubmit = (e) =>{
+  e.preventDefault();
+  buscarProductos(inputBusqueda.value);
+}
+
