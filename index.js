@@ -1,18 +1,5 @@
 
 /*
-fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
-  .then((res) => {
-
-    return res.json()
-  })
-  .then((data) => {
-    console.log(data)
-
-  crearTarjetaSerie(data)
-
-    
-  }) 
-
  PARTE DE LA TARJETA QUE INCLUIRIA EL PRECIO Y DESCRIPCION
   <p class="price">${curr.price}</p>
        <p class="description">${curr.description}</p>
@@ -20,19 +7,26 @@ fetch("http://makeup-api.herokuapp.com/api/v1/products.json")
   
 
 const endpointMakeUpPaginaPrincipal = "https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4";
-const tarjeta = document.querySelector(".container-main");
+const seccionDeTarjetas = document.querySelector(".container-main");
 const botonPrimeraPagina = document.querySelector("#boton-primera-pagina");
 const botonPaginaAnterior = document.querySelector("#boton-pagina-anterior");
 const botonProximaPagina = document.querySelector("#boton-proxima-pagina");
 const botonUltimaPagina = document.querySelector ("#boton-ultima-pagina");
 const botonCategoriaHeader = document.querySelector(".categoria-header");
-const categoriasDelHeader = document.querySelector(".categorias-header-container");
+const categoriasDelHeader = document.querySelector("#categorias-header-container");
 const botonMarcaHeader = document.querySelector(".marca-header");
-const marcasDelHeader = document.querySelector(".marcas-header-container");
+const marcasDelHeader = document.querySelector("#marcas-header-container");
 let indiceDePagina = 0;
 let indiceMaxPagina = 0;
 let arrayResultados = [];
 let tamanoPagina = 12;
+const formularioBusqueda = document.querySelector("#form-busqueda");
+const inputBusqueda = document.querySelector("#busqueda");
+
+
+
+/* FUNCIONES QUE CREAN EL PAGINADO */
+
 
 const mostrarPagina = () => {    
   botonPaginaAnterior.disabled = (indiceDePagina == 0);
@@ -62,51 +56,29 @@ const paginaAnterior = () =>{
   mostrarPagina();
 }
 
-const dibujarPagina =(array) => {
-  const html = array.reduce((acc, curr) => {
+/* CREAR CADA CARD CON REDUCE */
+
+const dibujarPagina = array => {
+  seccionDeTarjetas.innerHTML = array.reduce((acc, curr) => {
     return acc + `
-    <div class="tarjeta">
+    <article class="tarjeta" data-id="${curr.id}">
     <div class="images">
             <img src="${curr.image_link}" />
           </div>
      <h1 class="product-title">${curr.name}</h2>
-     </div>
+     
+     </article>
      `
   }, "")
-  tarjeta.innerHTML = html
+  asignacionDeClickaCadaTj();
 }
 botonPaginaAnterior.disabled = true;
 botonProximaPagina.onclick = paginaSiguiente;
 botonPaginaAnterior.onclick = paginaAnterior;
 pedirInfo();
 
-// OCULTAR Y MOSTRAR CATEGORIAS Y MARCAS DEL HEADER
-
-
-const sacarPonerClaseOcultarACategorias = () => {
-
-  categoriasDelHeader.classList.toggle("ocultar");
-
-}
-
-const sacarPonerClaseOcultarAMarcas = () => {
-
-  
-  marcasDelHeader.classList.toggle(".ocultar");
-}
-
-
-botonCategoriaHeader.onclick = sacarPonerClaseOcultarACategorias;
-botonMarcaHeader.onclick = sacarPonerClaseOcultarAMarcas;
-
-
-
 
 //SECCION BUSQUEDA
-
-
-const formularioBusqueda = document.querySelector("#form-busqueda");
-const inputBusqueda = document.querySelector("#busqueda");
 
 const buscarProductos = (busqueda) =>{
   fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${busqueda}`)
@@ -124,3 +96,59 @@ formularioBusqueda.onsubmit = (e) =>{
   buscarProductos(inputBusqueda.value);
 }
 
+/*********
+ * BUSCAR PRODUCTOS POR ID
+ */
+ const buscarProductoPorId = (id) => {
+   console.log(id)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4&id=${id}`)
+  .then(res => res.json())
+  .then(data => {
+    console.log(data)
+  })
+}
+
+/*
+
+ASIGNAR CLICK A CADA TARJETA
+
+
+*/
+const asignacionDeClickaCadaTj = () =>{
+  const tarjetas = document.querySelectorAll(".tarjeta")
+
+  for (let i = 0; i < tarjetas.length; i++) {
+    tarjetas[i].onclick = () =>{
+      console.log("me hicieron click")
+      const id = tarjetas[i].dataset.id
+      buscarProductoPorId(id)
+      
+    }
+    
+  }
+}
+
+
+
+
+
+
+// OCULTAR Y MOSTRAR CATEGORIAS Y MARCAS DEL HEADER
+
+
+const sacarPonerClaseOcultarACategorias = () => {
+
+  categoriasDelHeader.classList.toggle("ocultar");
+  
+
+}
+
+const sacarPonerClaseOcultarAMarcas = () => {
+
+  
+  marcasDelHeader.classList.toggle("ocultar");
+}
+
+
+botonCategoriaHeader.onclick = sacarPonerClaseOcultarACategorias;
+botonMarcaHeader.onclick = sacarPonerClaseOcultarAMarcas

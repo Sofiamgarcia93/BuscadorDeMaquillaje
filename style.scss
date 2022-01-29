@@ -4,6 +4,18 @@
   display: flex;
 }
 
+@mixin texto-centrado {
+  text-align: center;
+}
+
+@mixin estilado-aside {
+  width: 15vw;
+  height: 100vh;
+  position: absolute;
+  top: 110px;
+  right: 0px;
+}
+
 $font: "Lato", sans-serif;
 $white: white;
 $light: #e0c9cb;
@@ -98,22 +110,28 @@ header {
 }
 
 %asides {
-  width: 20%;
   height: 100%;
   background: $pink;
   margin: 0;
   padding: 10px;
   list-style: none;
   border: 1px solid $rose;
+  text-align: center;
 }
 
-.marcas-header-container {
+ul {
   @extend %asides;
 }
-.categorias-header-container {
-  @extend %asides;
+/*******/
+#categorias-header-container {
+  @include texto-centrado();
+  @include estilado-aside();
 }
 
+#marcas-header-container {
+  @include texto-centrado();
+  @include estilado-aside();
+}
 .container-main {
   margin: 100px;
   padding: 20px;
@@ -225,7 +243,7 @@ button {
 
 /*SECCION DE BUSQUEDA*/
 #seccion-busqueda {
-  display: flex;
+  @include display-flex();
   justify-content: center;
   align-items: center;
   margin: 100px;
