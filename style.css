@@ -34,17 +34,6 @@ header {
   font-size: 25px;
 }
 
-/*
-#buscador-header {
-  background: darken($light, 10%);
-  padding: 10px;
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  margin: 10px;
-  border-radius: 2px;
-  width: 70%;
-}*/
 /*************************************************/
 .marca-header, .categoria-header {
   border: none;
@@ -223,11 +212,25 @@ button {
 /*SECCION DE BUSQUEDA*/
 #seccion-busqueda {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 100px;
   box-shadow: 5px 5px 15px rgba(186, 126, 126, 0.5);
   padding: 10px;
+}
+
+.marcas-sugeridas {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-content: flex-end;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+span {
+  color: white;
 }
 
 ::placeholder {
