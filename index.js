@@ -188,6 +188,7 @@ categoriaBlush.onclick = () =>{
   })
   )
 
+  sacarPonerClaseOcultarACategorias();
 }
 
 categoriaEyebrow.onclick = () =>{
@@ -197,7 +198,7 @@ categoriaEyebrow.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
 
 categoriaEyeliner.onclick = () =>{
@@ -207,7 +208,7 @@ categoriaEyeliner.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
 
 
@@ -218,7 +219,7 @@ categoriaEyeshadow.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
 
 
@@ -229,7 +230,7 @@ categoriaLipLiner.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
 
 categoriaLipstick.onclick = () =>{
@@ -239,7 +240,7 @@ categoriaLipstick.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
 
 categoriaMascara.onclick = () =>{
@@ -249,5 +250,5 @@ categoriaMascara.onclick = () =>{
     dibujarPagina(data)
   })
   )
-
+  sacarPonerClaseOcultarACategorias();
 }
