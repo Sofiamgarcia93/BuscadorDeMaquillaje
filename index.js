@@ -105,10 +105,7 @@ formularioBusqueda.onsubmit = (e) =>{
 /*********
  * BUSCAR PRODUCTOS POR ID
  */
- const buscarProductoPorId = (id) => {
-  console.log(id)
- 
-}
+
 
 crearVistaDetalleTarjeta = (objeto) =>{
 seccionDeTarjetas.style.display = "none";
@@ -125,26 +122,35 @@ ${objeto}
 
 ASIGNAR CLICK A CADA TARJETA
 
-
 */
-
 
 const asignacionDeClickaCadaTj = () =>{
   
   const tarjetas = document.querySelectorAll(".tarjeta")
+  
   for (let i = 0; i < tarjetas.length; i++) {
-    
+     
     tarjetas[i].onclick = () =>{
   
       const id = tarjetas[i].dataset.id
-      console.log(tarjetas[i])
-      buscarProductoPorId(id)
-      crearVistaDetalleTarjeta(tarjetas[i])
-      
+      console.log(id)
+
+    
+      const tarjetaClickeada = tarjetas.find((elemento) =>{
+        return elemento.id === id
+      })
+
+      console.log(tarjetaClickeada)
+      /*crearVistaDetalleTarjeta(tarjetaClickeada)*/
+
+    }
     }
     
   }
-}
+
+  
+
+
 
 
 
