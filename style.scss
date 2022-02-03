@@ -1,4 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+$font: "Lato", sans-serif;
+$white: white;
+$light: #e0c9cb;
+$tan: #c3a1a0;
+$pink: #d9aab7;
+$rose: #ba7e7e;
+$dark: #4e4e4e;
 
 @mixin display-flex {
   display: flex;
@@ -9,20 +16,16 @@
 }
 
 @mixin estilado-aside {
-  width: 15vw;
-  height: 100vh;
+  width: 22vw;
   position: absolute;
   top: 110px;
   right: 0px;
+  background-color: rgba(255, 192, 203, 0.226);
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
 }
-
-$font: "Lato", sans-serif;
-$white: white;
-$light: #e0c9cb;
-$tan: #c3a1a0;
-$pink: #d9aab7;
-$rose: #ba7e7e;
-$dark: #4e4e4e;
 
 body {
   background: $light;
@@ -70,12 +73,6 @@ header {
 }*/
 /*************************************************/
 
-.categorias-header-container {
-  width: 70%;
-  @include display-flex();
-  justify-content: flex-end;
-}
-
 %botones {
   border: none;
   background-color: rgba(255, 255, 255, 0.171);
@@ -99,39 +96,24 @@ header {
 .marca-header:hover {
   background-color: $rose;
   color: white;
+  cursor: pointer;
 }
 .categoria-header:hover {
   background-color: $rose;
   color: white;
+  cursor: pointer;
 }
 
 .ocultar {
   display: none;
 }
 
-%asides {
-  height: 100%;
-  background: $pink;
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-  border: 1px solid $rose;
-  text-align: center;
-}
-
+/*
 ul {
   @extend %asides;
 }
-/*******/
-#categorias-header-container {
-  @include texto-centrado();
-  @include estilado-aside();
-}
+*/
 
-#marcas-header-container {
-  @include texto-centrado();
-  @include estilado-aside();
-}
 .container-main {
   margin: 100px;
   padding: 20px;
@@ -180,6 +162,31 @@ img {
   margin-right: 25px;
   text-align: justify;
 }
+
+#seccion-detalle-tarjeta {
+  background-color: #d9aab7;
+  height: 600px;
+}
+
+/*CATEGORIAS DEL MENU HAMBURGUESA*/
+.li-categorias {
+  list-style: none;
+  margin: 20px;
+  color: $white;
+  font-family: $font;
+  border-bottom: 1px solid;
+}
+.li-categorias:hover {
+  background-color: #ba7e7e81;
+  border-radius: 43px;
+  cursor: pointer;
+}
+
+#categorias-header-container {
+  @include texto-centrado();
+  @include estilado-aside();
+}
+
 /*
 button {
   background: darken($light, 10%);

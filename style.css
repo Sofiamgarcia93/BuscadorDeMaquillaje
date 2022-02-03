@@ -46,12 +46,6 @@ header {
   width: 70%;
 }*/
 /*************************************************/
-.categorias-header-container {
-  width: 70%;
-  display: flex;
-  justify-content: flex-end;
-}
-
 .marca-header, .categoria-header {
   border: none;
   background-color: rgba(255, 255, 255, 0.171);
@@ -69,46 +63,24 @@ header {
 .marca-header:hover {
   background-color: #ba7e7e;
   color: white;
+  cursor: pointer;
 }
 
 .categoria-header:hover {
   background-color: #ba7e7e;
   color: white;
+  cursor: pointer;
 }
 
 .ocultar {
   display: none;
 }
 
+/*
 ul {
-  height: 100%;
-  background: #d9aab7;
-  margin: 0;
-  padding: 10px;
-  list-style: none;
-  border: 1px solid #ba7e7e;
-  text-align: center;
+  @extend %asides;
 }
-
-/*******/
-#categorias-header-container {
-  text-align: center;
-  width: 15vw;
-  height: 100vh;
-  position: absolute;
-  top: 110px;
-  right: 0px;
-}
-
-#marcas-header-container {
-  text-align: center;
-  width: 15vw;
-  height: 100vh;
-  position: absolute;
-  top: 110px;
-  right: 0px;
-}
-
+*/
 .container-main {
   margin: 100px;
   padding: 20px;
@@ -157,6 +129,39 @@ img {
   line-height: 1.6em;
   margin-right: 25px;
   text-align: justify;
+}
+
+#seccion-detalle-tarjeta {
+  background-color: #d9aab7;
+  height: 600px;
+}
+
+/*CATEGORIAS DEL MENU HAMBURGUESA*/
+.li-categorias {
+  list-style: none;
+  margin: 20px;
+  color: white;
+  font-family: "Lato", sans-serif;
+  border-bottom: 1px solid;
+}
+
+.li-categorias:hover {
+  background-color: #ba7e7e81;
+  border-radius: 43px;
+  cursor: pointer;
+}
+
+#categorias-header-container {
+  text-align: center;
+  width: 22vw;
+  position: absolute;
+  top: 110px;
+  right: 0px;
+  background-color: rgba(255, 192, 203, 0.226);
+  margin: 0;
+  padding: 10px;
+  list-style: none;
+  text-align: center;
 }
 
 /*

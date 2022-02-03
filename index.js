@@ -1,9 +1,5 @@
 
-/*
- PARTE DE LA TARJETA QUE INCLUIRIA EL PRECIO Y DESCRIPCION
-  <p class="price">${curr.price}</p>
-       <p class="description">${curr.description}</p>
-*/
+
   
 
 const endpointMakeUpPaginaPrincipal = "https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4";
@@ -15,7 +11,15 @@ const botonUltimaPagina = document.querySelector ("#boton-ultima-pagina");
 const botonCategoriaHeader = document.querySelector(".categoria-header");
 const categoriasDelHeader = document.querySelector("#categorias-header-container");
 const botonMarcaHeader = document.querySelector(".marca-header");
-const marcasDelHeader = document.querySelector("#marcas-header-container");
+const detalleDeTarjeta = document.querySelector("#seccion-detalle-tarjeta");
+const categoriaBlush = document.querySelector("#blush");
+const categoriaEyebrow = document.querySelector("#eyebrow");
+const categoriaEyeliner = document.querySelector("#eyeliner");
+const categoriaEyeshadow = document.querySelector("#eyeshadow");
+const categoriaLipLiner = document.querySelector("#lip-liner");
+const categoriaLipstick = document.querySelector("#lipstick");
+const categoriaMascara = document.querySelector("#mascara");
+
 let indiceDePagina = 0;
 let indiceMaxPagina = 0;
 let arrayResultados = [];
@@ -66,6 +70,8 @@ const dibujarPagina = array => {
             <img src="${curr.image_link}" />
           </div>
      <h1 class="product-title">${curr.name}</h2>
+     <p class="product-type">${curr.product_type}</p>
+       <p class="brand">${curr.brand}</p>
      
      </article>
      `
@@ -100,12 +106,19 @@ formularioBusqueda.onsubmit = (e) =>{
  * BUSCAR PRODUCTOS POR ID
  */
  const buscarProductoPorId = (id) => {
-   console.log(id)
-  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4&id=${id}`)
-  .then(res => res.json())
-  .then(data => {
-    console.log(data)
-  })
+  console.log(id)
+ 
+}
+
+crearVistaDetalleTarjeta = (objeto) =>{
+seccionDeTarjetas.style.display = "none";
+detalleDeTarjeta.style.display = "flex";
+
+detalleDeTarjeta.innerHTML = 
+`
+${objeto}
+`
+
 }
 
 /*
@@ -114,14 +127,19 @@ ASIGNAR CLICK A CADA TARJETA
 
 
 */
-const asignacionDeClickaCadaTj = () =>{
-  const tarjetas = document.querySelectorAll(".tarjeta")
 
+
+const asignacionDeClickaCadaTj = () =>{
+  
+  const tarjetas = document.querySelectorAll(".tarjeta")
   for (let i = 0; i < tarjetas.length; i++) {
+    
     tarjetas[i].onclick = () =>{
-      console.log("me hicieron click")
+  
       const id = tarjetas[i].dataset.id
+      console.log(tarjetas[i])
       buscarProductoPorId(id)
+      crearVistaDetalleTarjeta(tarjetas[i])
       
     }
     
@@ -136,6 +154,8 @@ const asignacionDeClickaCadaTj = () =>{
 // OCULTAR Y MOSTRAR CATEGORIAS Y MARCAS DEL HEADER
 
 
+
+
 const sacarPonerClaseOcultarACategorias = () => {
 
   categoriasDelHeader.classList.toggle("ocultar");
@@ -143,12 +163,92 @@ const sacarPonerClaseOcultarACategorias = () => {
 
 }
 
-const sacarPonerClaseOcultarAMarcas = () => {
+const volverAPagPrincipal = () => {
 
+  mostrarPagina();
+  pedirInfo();
+  dibujarPagina();
   
-  marcasDelHeader.classList.toggle("ocultar");
+ 
 }
 
 
 botonCategoriaHeader.onclick = sacarPonerClaseOcultarACategorias;
-botonMarcaHeader.onclick = sacarPonerClaseOcultarAMarcas
+botonMarcaHeader.onclick = volverAPagPrincipal;
+
+
+//CATGORIAS DEL HEADER
+
+
+categoriaBlush.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+
+  sacarPonerClaseOcultarACategorias();
+}
+
+categoriaEyebrow.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
+
+categoriaEyeliner.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
+
+
+categoriaEyeshadow.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
+
+
+categoriaLipLiner.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
+
+categoriaLipstick.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
+
+categoriaMascara.onclick = () =>{
+  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara`)
+  .then(res => res.json()
+  .then( data =>{
+    dibujarPagina(data)
+  })
+  )
+  sacarPonerClaseOcultarACategorias();
+}
