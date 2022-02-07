@@ -1,4 +1,4 @@
-#Buscador de Maquillajes
+### Buscador de Maquillajes
 
 <img src="https://media0.giphy.com/media/gLREPOkkRAGGCGNKbZ/giphy.gif?cid=ecf05e47eq5v1f29yzieccr39ruwx8dsgi2ijmrk0fbih3pu&rid=giphy.gif&ct=s" whidth = "100%">
 <img src="http://makeup-api.herokuapp.com/assets/brushes-6d2ab84631ecd47ced4fa07c47eb37521eb61c5a525965dafaf308f21338aa44.png" width="100%">
@@ -10,16 +10,14 @@
 
 <img src="https://media0.giphy.com/media/gLREPOkkRAGGCGNKbZ/giphy.gif?cid=ecf05e47eq5v1f29yzieccr39ruwx8dsgi2ijmrk0fbih3pu&rid=giphy.gif&ct=s" whidth = "100%">
 
-#Presentacion del buscador:
+### Presentacion del Buscador:
 
 <ul>
     <li>Como pantalla principal se muestra un lstado de los maquillajes con un ranking mayor a 4 estrellas</li>
-    <li>Se puede encontrar una barra de navegacion donde se encuentra un menu desplegable con todas las catgorias(Delinadores, sombras, iluminadores, entre otros.) disponibles de maquillajes. Las cuales te llevaran a una seccion por catgoria.</li>
+    <li>Se puede encontrar una barra de navegacion donde se encuentra un menu desplegable con todas las catgorias(Delinadores, sombras, iluminadores, entre otros.) disponibles de maquillajes. Las cuales te llevaran a una seccion por catgoria. Y del Boton Brands se vuelve a la pantalla principal donde se puede buscar por Marcas.</li>
     <li>Seguido a esto encontraremos un buscador por marcas. Las mismas son: </li>
    
 </ul>
-
-<
 
 ### Instalación 🔧
 
