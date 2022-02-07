@@ -3,10 +3,14 @@
 <img src="https://media0.giphy.com/media/gLREPOkkRAGGCGNKbZ/giphy.gif?cid=ecf05e47eq5v1f29yzieccr39ruwx8dsgi2ijmrk0fbih3pu&rid=giphy.gif&ct=s" whidth = "100%">
 <img src="http://makeup-api.herokuapp.com/assets/brushes-6d2ab84631ecd47ced4fa07c47eb37521eb61c5a525965dafaf308f21338aa44.png" width="100%">
 <img src="https://media0.giphy.com/media/gLREPOkkRAGGCGNKbZ/giphy.gif?cid=ecf05e47eq5v1f29yzieccr39ruwx8dsgi2ijmrk0fbih3pu&rid=giphy.gif&ct=s" whidth = "100%">
-##<a href="">Link al buscador</a>
+
+# <a> Link del Buscador </a>
+
 <img src="https://media0.giphy.com/media/J4TxHPk4BMjuo0UwbI/giphy.gif?cid=ecf05e472i2vx68mf51d75gj115drkm3a49pimy091p4y2ne&rid=giphy.gif&ct=s" width="300px"/>
 
-\__Este proyecto es una web, donde trabajamos los conocimientos aprendidos en <a href="https://adaitw.org/">Ada</a> sobre API REST y SASS. _
+### El buscador:
+
+Este proyecto es una web, donde trabajamos los conocimientos aprendidos en <a href="https://adaitw.org/">Ada</a> sobre API REST y SASS.
 
 <img src="https://media0.giphy.com/media/gLREPOkkRAGGCGNKbZ/giphy.gif?cid=ecf05e47eq5v1f29yzieccr39ruwx8dsgi2ijmrk0fbih3pu&rid=giphy.gif&ct=s" whidth = "100%">
 
