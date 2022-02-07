@@ -120,11 +120,9 @@ ul {
   padding: 10px;
   margin: 15px;
   background-color: rgba(255, 255, 255, 0.315);
-  transition: width 2s;
 }
-
 .tarjeta:hover {
-  width: 500px;
+  transform: scale(1.5);
 }
 .product-title {
   font-size: 1.2em;
