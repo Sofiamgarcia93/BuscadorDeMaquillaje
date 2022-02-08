@@ -120,7 +120,7 @@ ${objeto}
 
 /*
 
-ASIGNAR CLICK A CADA TARJETA
+ASIGNAR CLICK A CADA TARJETA NO FUNCIONO ****falta arreglar*****
 
 */
 
