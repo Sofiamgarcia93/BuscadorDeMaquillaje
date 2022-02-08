@@ -33,7 +33,6 @@ body {
   text-transform: uppercase;
   background-image: url(https://p16-amd-va.tiktokcdn.com/obj/musically-maliva-obj/8733f94e398f9c79399a971cce238d36);
   background-repeat: no-repeat;
-  /*background-size: contain*/
 }
 
 header {
@@ -51,7 +50,16 @@ header {
   flex-direction: row;
   align-items: center;
 }
-
+a {
+  text-decoration: none;
+  outline: none !important;
+  color: $white;
+}
+a:visited {
+  text-decoration: none;
+  outline: none !important;
+  color: $white;
+}
 .titulo-header {
   color: $white;
 }
@@ -67,7 +75,6 @@ header {
   background-color: rgba(255, 255, 255, 0.171);
   color: $white;
   margin: 10px;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   font-size: 24px;
@@ -96,12 +103,6 @@ header {
 .ocultar {
   display: none;
 }
-
-/*
-ul {
-  @extend %asides;
-}
-*/
 
 .container-main {
   margin: 100px;
@@ -179,39 +180,6 @@ img {
   @include estilado-aside();
 }
 
-/*
-button {
-  background: darken($light, 10%);
-  padding: 10px;
-  display: inline-block;
-  outline: 0;
-  border: 0;
-  margin: -1px;
-  border-radius: 2px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: $white;
-  cursor: pointer;
-  &:hover {
-    background: $rose;
-    transition: all 0.4s ease-in-out;
-  }
-}
-
-.add {
-  width: 67%;
-}
-
-.like {
-  width: 22%;
-}
-
-.focus {
-  background: $rose;
-  color: $white;
-}
-*/
-
 /***********PAGINADO********/
 
 .paginado {
@@ -280,4 +248,70 @@ span {
 
 #busqueda:hover {
   background-color: $light;
+}
+
+/************************************/
+@media (max-width: 768px) {
+  .categoria-brand-header-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .fa-heart {
+    display: none;
+  }
+  .categoria-header {
+    height: 70px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.171);
+    color: $white;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 5px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+  }
+  .marca-header {
+    height: 70px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0.171);
+    color: $white;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 5px 5px;
+    transition-duration: 0.4s;
+    text-decoration: none;
+  }
+  #categorias-header-container {
+    @include texto-centrado();
+    position: absolute;
+    top: 147px;
+    right: 9px;
+    background-color: rgba(255, 192, 203, 0.61);
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+    text-align: center;
+    width: 28vw;
+  }
+  .tarjeta {
+    width: 120px;
+    border: 1px solid $rose;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+    background-color: rgba(255, 255, 255, 0.315);
+  }
+  img {
+    width: 118px;
+    border-radius: 25%;
+  }
+  .product-title {
+    font-size: 1em;
+    color: #4e4e4e;
+    margin-top: -5px;
+  }
 }
