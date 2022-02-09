@@ -87,7 +87,7 @@ pedirInfo();
 //SECCION BUSQUEDA
 
 const buscarProductos = (busqueda) =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?brand=${busqueda}`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?brand=${busqueda}`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -187,7 +187,7 @@ botonMarcaHeader.onclick = volverAPagPrincipal;
 
 
 categoriaBlush.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -198,7 +198,7 @@ categoriaBlush.onclick = () =>{
 }
 
 categoriaEyebrow.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyebrow`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -208,7 +208,7 @@ categoriaEyebrow.onclick = () =>{
 }
 
 categoriaEyeliner.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeliner`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -219,7 +219,7 @@ categoriaEyeliner.onclick = () =>{
 
 
 categoriaEyeshadow.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=eyeshadow`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -230,7 +230,7 @@ categoriaEyeshadow.onclick = () =>{
 
 
 categoriaLipLiner.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lip_liner`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -240,7 +240,7 @@ categoriaLipLiner.onclick = () =>{
 }
 
 categoriaLipstick.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=lipstick`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
@@ -250,7 +250,7 @@ categoriaLipstick.onclick = () =>{
 }
 
 categoriaMascara.onclick = () =>{
-  fetch(`http://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara`)
+  fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=mascara`)
   .then(res => res.json()
   .then( data =>{
     dibujarPagina(data)
