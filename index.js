@@ -1,12 +1,15 @@
+const { SassColor } = require("sass");
 
 
   
 
 const endpointMakeUpPaginaPrincipal = "https://makeup-api.herokuapp.com/api/v1/products.json?rating_greater_than=4";
 const seccionDeTarjetas = document.querySelector(".container-main");
+// nunca usas esta variable
 const botonPrimeraPagina = document.querySelector("#boton-primera-pagina");
 const botonPaginaAnterior = document.querySelector("#boton-pagina-anterior");
 const botonProximaPagina = document.querySelector("#boton-proxima-pagina");
+// nunca usas esta variable
 const botonUltimaPagina = document.querySelector ("#boton-ultima-pagina");
 const botonCategoriaHeader = document.querySelector(".categoria-header");
 const categoriasDelHeader = document.querySelector("#categorias-header-container");
@@ -24,6 +27,7 @@ let indiceDePagina = 0;
 let indiceMaxPagina = 0;
 let arrayResultados = [];
 let tamanoPagina = 12;
+// todos los elementos del dom deben ir agrupados juntos
 const formularioBusqueda = document.querySelector("#form-busqueda");
 const inputBusqueda = document.querySelector("#busqueda");
 
@@ -33,6 +37,7 @@ const inputBusqueda = document.querySelector("#busqueda");
 
 
 const mostrarPagina = () => {    
+  // bien!
   botonPaginaAnterior.disabled = (indiceDePagina == 0);
   botonProximaPagina.disabled = (indiceDePagina == Math.trunc(indiceMaxPagina));
   let limiteInferior = indiceDePagina * tamanoPagina;
@@ -51,11 +56,13 @@ const pedirInfo = () =>{
 }
 
 const paginaSiguiente = () =>{
+  // mejor escribir indiceDePagina++
   indiceDePagina += 1;
   mostrarPagina();
 }
 
 const paginaAnterior = () =>{
+  // mejor escribir indiceDePagina--
   indiceDePagina -= 1;
   mostrarPagina();
 }
@@ -64,6 +71,9 @@ const paginaAnterior = () =>{
 
 const dibujarPagina = array => {
   seccionDeTarjetas.innerHTML = array.reduce((acc, curr) => {
+    // A veces la api nos devuelve algunos resultados, como brand y product type, en null, y vemos ese null en tus tarjetas
+    // Podemos hacer un ternario para evitarlo:
+    // <p class="brand">${curr.brand ? curr.brand : "No disponible"}</p>
     return acc + `
     <article class="tarjeta" data-id="${curr.id}">
     <div class="images">
@@ -78,6 +88,10 @@ const dibujarPagina = array => {
   }, "")
   asignacionDeClickaCadaTj();
 }
+
+// todo este codigo se ejecuta apenas carga la pagina: es mejor ponerlo abajo de todo,
+// luego de la declaracion de las funciones, asi el flujo de ejecucion es mas 
+// facil de entender
 botonPaginaAnterior.disabled = true;
 botonProximaPagina.onclick = paginaSiguiente;
 botonPaginaAnterior.onclick = paginaAnterior;
@@ -107,7 +121,10 @@ formularioBusqueda.onsubmit = (e) =>{
  */
 
 
+// falta un const aca 
 crearVistaDetalleTarjeta = (objeto) =>{
+  // esta mal el tabulado aca, dentro de la funcion hay que dejar dos espacios
+  // el codigo deberia estar a la altura de mi comentario. 
 seccionDeTarjetas.style.display = "none";
 detalleDeTarjeta.style.display = "flex";
 
@@ -133,6 +150,7 @@ const asignacionDeClickaCadaTj = () =>{
     tarjetas[i].onclick = () =>{
   
       const id = tarjetas[i].dataset.id
+      // no dejes console log en una entrega
       console.log(id)
 
     
@@ -148,7 +166,7 @@ const asignacionDeClickaCadaTj = () =>{
     
   }
 
-  
+  // no dejes estos saltos de linea al azar, dificultan la lectura de tu codigo
 
 
 
@@ -185,6 +203,23 @@ botonMarcaHeader.onclick = volverAPagPrincipal;
 
 //CATGORIAS DEL HEADER
 
+// muy repetitivo este codigo, podrias hacer una funcion que reciba el tipo de producto como parametro:
+
+//  buscarPorCategoria = categoria => {
+//   fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=${categoria}`)
+//   .then(res => res.json()
+//   .then( data =>{
+//     dibujarPagina(data)
+//   })
+//   )
+
+//   sacarPonerClaseOcultarACategorias();
+// }
+
+// y despues llamarla en cada click de los botones:
+// categoriaBlush.onclick = () => buscarPorCategoria("blush")
+// categoriaEyebrow.onclick = () => buscarPorCategoria("eyebrow")
+// etc...
 
 categoriaBlush.onclick = () =>{
   fetch(`https://makeup-api.herokuapp.com/api/v1/products.json?product_type=blush`)

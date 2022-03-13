@@ -1,3 +1,4 @@
+// Importa todas tus tipografias en html, o todas en css, pero no las dejes repartidas
 @import url("https://fonts.googleapis.com/css?family=Lato:400,700");
 $font: "Lato", sans-serif;
 $white: white;
@@ -7,6 +8,7 @@ $pink: #d9aab7;
 $rose: #ba7e7e;
 $dark: #4e4e4e;
 
+// buen uso de mixin 
 @mixin display-flex {
   display: flex;
 }
@@ -26,6 +28,9 @@ $dark: #4e4e4e;
   list-style: none;
   text-align: center;
 }
+
+// No aprovechas el anidado de sass y es una lastima, realmente ayuda mucho al codigo. 
+// Te animo a que lo practiques, es importante saber usarlo bien
 
 body {
   background: $light;
@@ -229,6 +234,7 @@ img {
 span {
   color: white;
 }
+// esto no hace nada, un pseudo elemento debe estar asociado a un elemento 
 ::placeholder {
   color: $white;
   font-family: $font;
