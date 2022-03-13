@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MakeUp Finder</title>
+    <!-- debe llamarse favicon.ico y estar en la carpeta principal, no en imagenes -->
     <link rel= "shortcut icon" type="image/svg" href="/imagen/heart-solid.svg"/>
     <link rel="stylesheet" href="./style.css">
+    <!-- Esto no tiene sentido, podrias importar las tipografias con el link de html en lugar de usar un link style para 
+    usar el link de css -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Qwitcher+Grypen:wght@400;700&family=Waterfall&display=swap');
@@ -46,6 +49,7 @@
     <section id="seccion-busqueda">
         <form id="form-busqueda">
             <i class="fas fa-heart"></i>
+            <!-- Si el input no tiene label, debe tener aria-label -->
             <input type="text" placeholder="Find your favorite brand" id="busqueda">
             <i class="fas fa-heart"></i>
         </form>
@@ -65,6 +69,7 @@
           
             <div class="ocultar" id="categorias-header-container">
                 <ul>
+                    <!-- no uses el tipo de etiqueta html en el nombre de la clase -->
                     <li class="li-categorias" id="blush">Blush</li>
                     <li class="li-categorias" id="eyebrow">Eyebrow</li>
                     <li class="li-categorias" id="eyeliner">Eyeliner</li>
@@ -91,6 +96,10 @@
 
         
         <div class="paginado">
+            <!-- no dejes nunca espacio entre los =, pero siempre deja un 
+                espacio entre el fin de las comillas y el inicio del proximo atributo -->
+                <!-- Los botones que no tienen contenido de texto deben tener aria label, 
+                sino el usuario de lector de pantalla no tiene idea de lo que hacen -->
             <button class = "boton-pag-prev-next" id="boton-primera-pagina"><i class="fas fa-angle-double-left"></i></button>
             <button class = "boton-pag-prev-next" id="boton-pagina-anterior"><i class="fas fa-angle-left"></i></button>
             <button class = "boton-pag-prev-next"id="boton-proxima-pagina"><i class="fas fa-angle-right"></i></button>
